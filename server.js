@@ -34,7 +34,7 @@ function startApp() {
 	});
 
 	app.get("/addsource", (req, res) => {
-		cloudinaryWrapper.addSource("google_photos");
+		cloudinaryWrapper.addSource(req.query.source || "");
 		res.send("added successfully!");
 	});	
 
